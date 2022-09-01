@@ -1,0 +1,88 @@
+<div class="ui grid centered aligned">
+  <div class="three wide column">
+    <div class="ui card" style="background-color: black; color: white; min-height: 210px">
+      <div class="content">
+        <i class="ui map pin icon green large right floated"></i>
+        <h3 class="ui header" style="color: white;">{{name}}</h3>
+        <div class="ui list">
+          <div class="item">Lat: {{lat}}</div>
+          <div class="item">Lng: {{lng}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="three wide column left">
+    <div class="ui card" style="background-color: black; color: white; min-height: 210px">
+      <div class="content">
+        <i class="right floated big {{weatherIcon}} icon"></i>
+        <h3 class="ui header" style="color: white;">Weather</h3>
+        <div class="ui list">
+          <div class="item">{{weather}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="three wide column">
+    <div class="ui card" style="background-color: black; color: white; min-height: 210px">
+      <div class="content">
+        <i class="ui temperature low icon large right floated"></i>
+        <h3 class="ui header" style="color: white;">Temp</h3>
+        <div class="ui list">
+          <div class="item">{{tempC}} C</div>
+          <div class="item">{{tempF}} F</div>
+          <div class="item">Max: {{maxTemp}}</div>
+          <div class="item">Min: {{minTemp}}</div>
+        </div>
+        <div class="column">
+          {{#if station.tempTrendingUp}}
+            <i class="right floated big arrow up ${_colour} icon"></i>
+          {{else if station.tempTrendingDown}}
+            <i class="right floated big arrow down ${_colour} icon"></i>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="three wide column">
+    <div class="ui card" style="background-color: black; color: white; min-height: 210px">
+      <div class="content">
+        <i class="ui wind icon blue large right floated"></i>
+        <h3 class="ui header" style="color: white;">Wind</h3>
+          <div class="ui list">
+            <div class="item">{{windBft}} Bft</div>
+            <div class="item">{{windCompass}}</div>
+            <div class="item">Feels like {{windChill}}</div>
+            <div class="item">Max: {{maxWind}}</div>
+            <div class="item">Min: {{minWind}}</div>
+          </div>
+        <div class="column">
+          {{#if station.windTrendingUp}}
+            <i class="right floated big arrow up ${_colour} icon"></i>
+          {{else if station.windTrendingDown}}
+            <i class="right floated big arrow down ${_colour} icon"></i>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="three wide column">
+    <div class="ui card" style="background-color: black; color: white; min-height: 210px">
+      <div class="content">
+        <i class="ui snowflake outline icon orange large right floated"></i>
+        <h3 class="ui header" style="color: white;">Pressure</h3>
+          <div class="ui list">
+            <div class="item">{{pressure}} Hpa</div>
+            <div class="item">Max: {{maxPressure}}</div>
+            <div class="item">Min: {{minPressure}}</div>
+          </div>
+        <div class="column">
+          {{#if station.pressureTrendingUp}}
+            <i class="right floated big arrow up ${_colour} icon"></i>
+          {{else if station.pressureTrendingDown}}
+            <i class="right floated big arrow down ${_colour} icon"></i>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
